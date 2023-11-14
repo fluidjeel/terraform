@@ -43,3 +43,7 @@ resource "aws_security_group" "allow_tls" {
 
   tags = local.tags
 }
+
+output "sg_details" {
+    value = aws_security_group.allow_tls
+}

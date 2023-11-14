@@ -19,7 +19,11 @@ locals {
 resource "aws_instance" "tfec2" {
     ami = "ami-0366c1a458e462680"
     instance_type = "t2.micro"
+    subnet_id = "subnet-0b05147c3d52f1f77"
+    iam_instance_profile = "terraform-role"
+    key_name = "terraform"
+
     tags = local.tags
     volume_tags = local.tags
-    
+
 }

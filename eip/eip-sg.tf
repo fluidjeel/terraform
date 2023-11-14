@@ -23,7 +23,7 @@ resource "aws_eip" "lb" {
 
 resource "aws_security_group" "allow_tls" {
   description = "Allow TLS inbound traffic"
-  vpc_id      = "vpc-09068aa9f54da8688"
+  vpc_id      = var.vpc_id
 
 
   ingress {

@@ -21,5 +21,5 @@ resource "aws_instance" "tfec2" {
     instance_type = "t2.micro"
     tags = local.tags
     volume_tags = local.tags
-  
+    
 }

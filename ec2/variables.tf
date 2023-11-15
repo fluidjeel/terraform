@@ -1,3 +1,3 @@
-variable "ami_id" {
-    default = "ami-0366c1a458e462680"
+variable "instancetype" {
+    default = "t2.small"
 }

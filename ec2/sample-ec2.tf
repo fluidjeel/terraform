@@ -12,7 +12,7 @@ locals {
     InfraOwner = "sre-cloud-reliability@tavisca.com"
     Product = "plt"
     BusinessUnit = "travel.poc"
-    count = var.isTest == true ? 2 : 0
+    count = var.isTest == true ? 3 : 0
 
   }
 }

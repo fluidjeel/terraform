@@ -4,7 +4,7 @@ provider "aws" {
 
 locals {
   tags = {
-    Name = "plt-tf-test-ec2"
+    Name = "plt-tf-test-ec2${count.index}"
     AppName = "terra-ec2-test"
     Backup = "no"
     Environment = "poc"
@@ -22,6 +22,7 @@ resource "aws_instance" "tfec2" {
     subnet_id = "subnet-0b05147c3d52f1f77"
     iam_instance_profile = "terraform-role"
     key_name = "terraform"
+    count = var.isTest == true ? 2 : 0
 
     tags = local.tags
     volume_tags = local.tags

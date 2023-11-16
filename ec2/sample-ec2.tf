@@ -12,6 +12,7 @@ locals {
     InfraOwner = "sre-cloud-reliability@tavisca.com"
     Product = "plt"
     BusinessUnit = "travel.poc"
+    count = var.isTest == true ? 2 : 0
 
   }
 }
@@ -22,7 +23,6 @@ resource "aws_instance" "tfec2" {
     subnet_id = "subnet-0b05147c3d52f1f77"
     iam_instance_profile = "terraform-role"
     key_name = "terraform"
-    count = var.isTest == true ? 2 : 0
 
     tags = local.tags
     volume_tags = local.tags

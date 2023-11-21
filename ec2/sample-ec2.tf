@@ -32,4 +32,8 @@ resource "aws_instance" "tfec2" {
       tags = local.tags
     }
 
+    provisioner "local-exec" {
+    command = "echo ${aws_instance.myec2.private_ip} >> private_ips.txt"
+  }
+
 }

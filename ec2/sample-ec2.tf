@@ -28,12 +28,11 @@ resource "aws_instance" "tfec2" {
     #tags = local.tags
     volume_tags = local.tags
     tags = {
-      Name = "plt-tf-test-ec2${count.index}", 
-      tags = local.tags
+      Name = "plt-tf-test-ec2${count.index}"
     }
 
     provisioner "local-exec" {
-    command = "echo ${aws_instance.myec2.private_ip} >> private_ips.txt"
+    command = "echo ${aws_instance.tfec2.private_ip} >> private_ips.txt"
   }
 
 }
